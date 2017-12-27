@@ -3,9 +3,9 @@ import * as multiStorage from "./multi-storage";
 export function onLogin ({id, token}) {
     this.userId = id;
     this.loggedIn = true;
-    return multiStorage.set(this.endpoint + "__login_token__", token)
+    return multiStorage.set(this.endpoint + "__login_token123__", token)
         .then(this.emit.bind(this, "loggedIn", id))
-        .then(() => id);
+        .then(() => {id,token});
 }
 
 export function onLogout () {
