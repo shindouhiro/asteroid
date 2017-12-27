@@ -5,7 +5,7 @@ export function onLogin ({id, token}) {
     this.loggedIn = true;
     return multiStorage.set(this.endpoint + "__login_token123__", token)
         .then(this.emit.bind(this, "loggedIn", id))
-        .then(() => {id,token});
+        .then(() => id);
 }
 
 export function onLogout () {
